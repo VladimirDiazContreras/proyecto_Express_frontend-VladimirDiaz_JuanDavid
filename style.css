@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: url("fondoL.png") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: rgba(37, 37, 37, 0.8);
+  border-radius: 15px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.9);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 25px;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.btn-login {
+  border-radius: 25px;
+  padding: 0.75rem;
+  font-weight: bold;
+  background: crimson;
+  color: white;
+  border: none;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: darkred;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
