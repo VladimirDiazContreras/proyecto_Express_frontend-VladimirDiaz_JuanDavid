@@ -88,17 +88,23 @@ body {
   }
   
   /* Menú lateral móvil */
-  .side-menu {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    height: 100%;
-    width: 250px;
-    background: rgba(0, 0, 0, 0.95);
-    padding-top: 70px;
-    transition: right 0.3s ease;
-    z-index: 999;
-  }
+  /* Menú lateral móvil */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* oculto */
+  height: 100%;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.95);
+  padding-top: 70px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.side-menu.active {
+  right: 0; /* visible */
+}
+
   
   .side-menu ul {
     list-style: none;
@@ -123,7 +129,7 @@ body {
   
   /* Hero principal */
   .hero {
-    height: 80vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     padding-left: 50px;
@@ -173,13 +179,13 @@ body {
   
   .carousel-container {
     display: flex;
-    gap: 15px;
+    gap: 25px;
     overflow-x: auto;
   }
   
   .movie-card {
-    width: 200px;
-    height: 120px;
+    width: 20vw;
+    height: 10vh;
     background: gray;
     border-radius: 6px;
     flex: 0 0 auto;
@@ -187,7 +193,7 @@ body {
   }
   
   .movie-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
   
   /* Responsive */
@@ -198,5 +204,14 @@ body {
     .burger {
       display: flex;
     }
+    .movie-card {
+      width: 35vw;
+      height: 12vh;
+      background: gray;
+      border-radius: 6px;
+      flex: 0 0 auto;
+      transition: transform 0.3s;
+    }
+    
   }
   
