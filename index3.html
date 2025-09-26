@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Película</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">MiFlix</div>
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="index2.html">Inicio</a></li>
+        <li><a href="#">Series</a></li>
+        <li><a href="#">Películas</a></li>
+        <li><a href="#">Novedades</a></li>
+        <li><a href="#">Mi lista</a></li>
+      </ul>
+    </nav>
+    <div class="user-options">
+      <button class="btn">Cerrar sesión</button>
+    </div>
+
+    <!-- Burger -->
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Menú lateral móvil -->
+  <div class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index2.html">Inicio</a></li>
+      <li><a href="#">Series</a></li>
+      <li><a href="#">Películas</a></li>
+      <li><a href="#">Novedades</a></li>
+      <li><a href="#">Mi lista</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero con gradiente -->
+  <section class="movie-hero" style="background-image: url('https://image.tmdb.org/t/p/original/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg');">
+    <div class="overlay"></div>
+    <div class="movie-info">
+      <h1>Guardianes de la Galaxia Vol. 3</h1>
+      <p>
+        Peter Quill, aún conmovido por la pérdida de Gamora, debe reunir a su equipo
+        para defender el universo y proteger a uno de los suyos. Una misión peligrosa
+        que, si no se completa, podría significar el fin de los Guardianes.
+      </p>
+      <div class="buttons">
+        <button class="btn">▶ Reproducir</button>
+        <button class="btn secondary">+ Mi Lista</button>
+      </div>
+      <div class="extra-info">
+        <span>Duración: 2h 30min</span> • 
+        <span>Acción</span> • 
+        <span>+13</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recomendaciones -->
+  <section class="carousel">
+    <h2>Más como esta</h2>
+    <div class="carousel-container">
+      <div class="movie-card" onclick="location.href='index3.html'"></div>
+      <div class="movie-card" onclick="location.href='index3.html'"></div>
+      <div class="movie-card" onclick="location.href='index3.html'"></div>
+      <div class="movie-card" onclick="location.href='index3.html'"></div>
+      <div class="movie-card" onclick="location.href='index3.html'"></div>
+    </div>
+  </section>
+
+  <script src="./script3.js"></script>
+</body>
+</html>
