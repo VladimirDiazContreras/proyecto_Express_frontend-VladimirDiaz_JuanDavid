@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Películas - OmniFlix</title>
+  <link rel="stylesheet" href="./style/style4.css">
+</head>
+<body>
+  <!-- Fondo oscuro -->
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">OmniFlix</div>
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="index2.html">Inicio</a></li>
+        <li><a href="#">Series</a></li>
+        <li><a href="index4.html" class="active">Películas</a></li>
+        <li><a href="#">Novedades</a></li>
+        <li><a href="#">Mi lista</a></li>
+      </ul>
+    </nav>
+    <div class="user-options">
+      <button class="btn">Cerrar sesión</button>
+    </div>
+
+    <!-- Burger -->
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Menú lateral móvil -->
+  <div class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index2.html">Inicio</a></li>
+      <li><a href="#">Series</a></li>
+      <li><a href="index4.html">Películas</a></li>
+      <li><a href="#">Novedades</a></li>
+      <li><a href="#">Mi lista</a></li>
+    </ul>
+  </div>
+
+  <!-- 📌 Lista de películas -->
+  <section class="movie-list">
+    <h2>Películas </h2>
+
+    <div class="movie-item">
+      <img src="https://via.placeholder.com/200x300" alt="Póster película">
+      <div class="movie-info">
+        <h3>Título de la Película</h3>
+        <p>
+          Una breve sinopsis de la película, su género y algo llamativo para que el usuario se interese en verla.
+        </p>
+        <div class="actions">
+          <button class="btn">▶ Reproducir</button>
+          <button class="btn secondary">Más información</button>
+          <button class="btn add">+ Mi lista</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-item">
+      <img src="https://via.placeholder.com/200x300" alt="Póster película">
+      <div class="movie-info">
+        <h3>Otra Película</h3>
+        <p>
+          Descripción corta que atraiga al espectador, como un resumen emocionante o misterioso.
+        </p>
+        <div class="actions">
+          <button class="btn">▶ Reproducir</button>
+          <button class="btn secondary">Más información</button>
+          <button class="btn add">+ Mi lista</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-item">
+      <img src="https://via.placeholder.com/200x300" alt="Póster película">
+      <div class="movie-info">
+        <h3>Película Final</h3>
+        <p>
+          Aquí podrías añadir detalles de actores, género y duración, para imitar el estilo profesional de Netflix.
+        </p>
+        <div class="actions">
+          <button class="btn">▶ Reproducir</button>
+          <button class="btn secondary">Más información</button>
+          <button class="btn add">+ Mi lista</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./scripts/script4.js"></script>
+</body>
+</html>

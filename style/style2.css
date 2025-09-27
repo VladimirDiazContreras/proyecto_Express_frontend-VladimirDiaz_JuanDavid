@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url("fondoL.png") no-repeat center center fixed;
+    background: url("../fondoL.png") no-repeat center center fixed;
     background-size: cover;
     color: white;
     position: relative;
@@ -185,7 +185,7 @@ body {
   
   .movie-card {
     width: 20vw;
-    height: 10vh;
+    height: 15vh;
     background: gray;
     border-radius: 6px;
     flex: 0 0 auto;
