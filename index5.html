@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Lista - OmniFlix</title>
+  <link rel="stylesheet" href="./style/style2.css">
+</head>
+<body>
+  <!-- Fondo oscuro -->
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">OmniFlix</div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="index2.html">Inicio</a></li>
+        <li><a href="index4.html">Series</a></li>
+        <li><a href="index4.html">Películas</a></li>
+        <li><a href="index5.html" class="active">Mi lista</a></li>
+      </ul>
+    </div>
+    <div class="user-options">
+      <button id="logoutBtn" class="btn">Cerrar sesión</button>
+    </div>
+    <!-- Burger -->
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Menú lateral móvil -->
+  <div class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index2.html">Inicio</a></li>
+      <li><a href="index4.html">Series</a></li>
+      <li><a href="index4.html">Películas</a></li>
+      <li><a href="index5.html" class="active">Mi lista</a></li>
+      <li><button id="logoutBtnMobile" class="btn">Cerrar sesión</button></li>
+    </ul>
+  </div>
+
+  <!-- Contenido principal -->
+  <main>
+    <section class="carousel">
+      <h2>Mi Lista</h2>
+      <div id="mi-lista">
+        <!-- Aquí se insertan las reseñas dinámicamente -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="./scripts/api.js"></script>
+  <script src="./scripts/script5.js"></script>
+  <script>
+    // Burger menú
+    const burger = document.getElementById("burger");
+    const sideMenu = document.getElementById("sideMenu");
+
+    burger.addEventListener("click", () => {
+      sideMenu.classList.toggle("active");
+    });
+
+    // Logout
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      api.clearToken();
+      location.href = "index.html";
+    });
+
+    document.getElementById("logoutBtnMobile").addEventListener("click", () => {
+      api.clearToken();
+      location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

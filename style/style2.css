@@ -259,3 +259,59 @@ body {
     height: 180px;
   }
 }
+
+/* Mi Lista */
+#mi-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+}
+
+#mi-lista .movie-card {
+  width: 200px;
+  background: #141414;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+#mi-lista .movie-card:hover {
+  transform: scale(1.05);
+}
+
+#mi-lista .movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+#mi-lista .movie-overlay {
+  padding: 10px;
+  color: white;
+}
+
+#mi-lista .movie-overlay h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+#mi-lista .comentario {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #ddd;
+}
+
+#mi-lista .calificacion {
+  font-weight: bold;
+  margin-top: 5px;
+  color: #e50914;
+}
+
+.empty-list {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #bbb;
+}

@@ -42,7 +42,6 @@ async function loadMovies() {
             <small>${m.anno ?? ''}</small>
             <div class="actions">
               <button class="btn" onclick="location.href='index3.html?id=${m._id}'">▶ Ver</button>
-              <button class="btn secondary">Más información</button>
               <button class="btn add">+ Mi lista</button>
             </div>
           </div>
