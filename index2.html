@@ -1,77 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Principal</title>
+  <title>Inicio - OmniFlix</title>
   <link rel="stylesheet" href="./style/style2.css">
 </head>
+
 <body>
-  <!-- Fondo estilo Netflix -->
   <div class="overlay"></div>
 
   <!-- Navbar -->
-  <header class="navbar">
+  <nav class="navbar">
     <div class="logo">OmniFlix</div>
-
-    <!-- Botón Burger -->
+    <div class="nav-links">
+      <ul>
+        <li><a href="index2.html" class="active">Inicio</a></li>
+        <li><a href="index4.html">Series</a></li>
+        <li><a href="index4.html">Películas</a></li>
+        <li><a href="index4.html">Novedades</a></li>
+        <li><a href="index4.html">Mi lista</a></li>
+      </ul>
+    </div>
+    <div class="user-options">
+      <button class="btn" id="logoutBtn">Cerrar sesión</button>
+    </div>
     <div class="burger" id="burger">
       <span></span>
       <span></span>
       <span></span>
     </div>
-
-    <!-- Menú normal escritorio -->
-    <nav class="nav-links">
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Series</a></li>
-        <li><a href="#">Películas</a></li>
-        <li><a href="#">Novedades</a></li>
-        <li><a href="#">Mi lista</a></li>
-      </ul>
-    </nav>
-
-    <div class="user-options">
-      <button class="btn">Cerrar sesión</button>
-    </div>
-  </header>
+  </nav>
 
   <!-- Menú lateral móvil -->
   <div class="side-menu" id="sideMenu">
     <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Series</a></li>
-      <li><a href="#">Películas</a></li>
-      <li><a href="#">Novedades</a></li>
-      <li><a href="#">Mi lista</a></li>
+      <li><a href="index2.html">Inicio</a></li>
+      <li><a href="index4.html">Series</a></li>
+      <li><a href="index4.html">Películas</a></li>
+      <li><a href="index4.html">Novedades</a></li>
+      <li><a href="index4.html">Mi lista</a></li>
+      <li><a href="#" id="logoutMobile">Cerrar sesión</a></li>
     </ul>
   </div>
 
-  <!-- Contenido destacado -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-text">
       <h1>La mejor experiencia de cine</h1>
       <p>Disfruta de miles de películas y series en cualquier momento.</p>
       <div class="buttons">
-        <button class="btn">▶ Reproducir</button>
-        <button class="btn secondary">Más información</button>
+        <button class="btn" onclick="location.href='index4.html'">▶ Reproducir</button>
+        <button class="btn secondary" onclick="window.open('https://github.com/JuanSantoyoJ/Proyecto_EXpressBackend_S1_SantoyoJuan-DiazVladimir.git','_blank')">Más información</button>
       </div>
     </div>
   </section>
 
-  <!-- Carrusel básico -->
+  <!-- Catálogo -->
   <section class="carousel">
     <h2>Populares en OmniFlix</h2>
-    <div class="carousel-container">
-      <div class="movie-card"></div>
-      <div class="movie-card"></div>
-      <div class="movie-card"></div>
-      <div class="movie-card"></div>
-      <div class="movie-card"></div>
+    <div class="carousel-container" id="popularesContainer">
+      <!-- Las películas se cargan con JS -->
     </div>
   </section>
 
+  <script src="./scripts/api.js"></script>
   <script src="./scripts/script2.js"></script>
 </body>
+
 </html>
