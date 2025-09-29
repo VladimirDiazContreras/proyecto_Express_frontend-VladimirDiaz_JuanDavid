@@ -1,3 +1,4 @@
+// scripts/script4.js
 import { api } from "./api.js";
 
 async function loadCategories() {
