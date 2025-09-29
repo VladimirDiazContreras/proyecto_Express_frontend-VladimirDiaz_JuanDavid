@@ -1,0 +1,124 @@
+/* Estilo profesional y coherente con el login */
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: url("../fondoL.png") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 10%, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0.9) 100%);
+    z-index: 0;
+  }
+  
+  .register-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #e50914;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+  
+  .register-box {
+    background: rgba(34, 34, 34, 0.9);
+    padding: 36px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.9);
+    text-align: left;
+  }
+  
+  .register-box h2 {
+    margin: 0 0 18px 0;
+    color: #fff;
+    font-size: 1.4rem;
+  }
+  
+  .input-group {
+    margin-bottom: 16px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #cfcfcf;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(255,255,255,0.03);
+    color: #fff;
+    font-size: 15px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+  }
+  
+  .input-group input::placeholder {
+    color: #999;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(180deg, #ff3a3a 0%, #88252a 100%);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.12s ease, opacity 0.12s ease;
+  }
+  
+  .btn:active { transform: scale(0.995); }
+  .btn[disabled] { opacity: 0.6; cursor: not-allowed; }
+  
+  .extra {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #bbb;
+    text-align: center;
+  }
+  
+  .extra a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .message {
+    margin-top: 12px;
+    font-size: 14px;
+    min-height: 18px;
+    text-align: center;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .register-box { padding: 20px; border-radius: 10px; }
+    .logo { font-size: 36px; }
+    .register-box h2 { text-align: center; }
+  }
+  

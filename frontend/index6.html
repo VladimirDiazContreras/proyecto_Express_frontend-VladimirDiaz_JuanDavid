@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro - MiFlix</title>
+  <link rel="stylesheet" href="./style/style6.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="register-container">
+    <h1 class="logo">MiFlix</h1>
+    <div class="register-box">
+      <h2>Crear cuenta</h2>
+      <form id="registerForm" novalidate>
+        <div class="input-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" placeholder="Tu nombre" required />
+        </div>
+
+        <div class="input-group">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" placeholder="ejemplo@correo.com" required />
+        </div>
+
+        <div class="input-group">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" placeholder="Mínimo 6 caracteres" minlength="6" required />
+        </div>
+
+        <div class="input-group">
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" placeholder="Calle, número, ciudad" required />
+        </div>
+
+        <button type="submit" class="btn" id="submitBtn">Registrarse</button>
+      </form>
+
+      <p class="extra">¿Ya tienes cuenta? <a href="index.html">Inicia sesión</a></p>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script src="./scripts/script6.js"></script>
+</body>
+</html>
