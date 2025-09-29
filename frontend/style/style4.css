@@ -224,3 +224,33 @@ body {
     width: 140px;
   }
 }
+
+/* Filtro de categorías */
+.filter-bar {
+  margin: 20px 50px;
+  position: relative;
+  z-index: 1002; /* Por encima del overlay y otros contenedores */
+}
+
+.filter-bar label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.filter-bar select {
+  background: rgba(20, 20, 20, 0.85);
+  color: white;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  appearance: auto; /* para que la flecha del select aparezca */
+  z-index: 1002;
+  position: relative;
+}
+
+.filter-bar select:focus {
+  outline: none;
+  border-color: #e50914;
+}

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,7 @@
     <nav class="nav-links">
       <ul>
         <li><a href="index2.html">Inicio</a></li>
-        <li><a href="index4.html" class="active">Series</a></li>
+        <li><a href="index4.html">Series</a></li>
         <li><a href="index4.html" class="active">Películas</a></li>
         <li><a href="index5.html">Mi lista</a></li>
       </ul>
@@ -44,25 +43,24 @@
     </ul>
   </div>
 
-  <!-- Lista de películas -->
+  <!-- Contenido principal -->
   <section class="main-content">
     <h2>Películas</h2>
-    <div id="moviesContainer"></div>
+
+    <!-- Filtro de categorías -->
+    <div class="filter-bar">
+      <label for="category">Filtrar por categoría:</label>
+      <select id="category">
+        <option value="">Todas</option>
+      </select>
+    </div>
+
+    <!-- Contenedor de películas -->
+    <div id="moviesContainer" class="movie-list"></div>
   </section>
 
+  <!-- Scripts -->
   <script src="./scripts/api.js"></script>
   <script src="./scripts/script4.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const burger = document.getElementById("burger");
-      const sideMenu = document.getElementById("sideMenu");
-      if (burger && sideMenu) burger.addEventListener("click", () => sideMenu.classList.toggle("active"));
-
-      document.getElementById("btnCerrarSesion").addEventListener("click", () => {
-        api.clearToken();
-        location.href = "index.html";
-      });
-    });
-  </script>
 </body>
 </html>
