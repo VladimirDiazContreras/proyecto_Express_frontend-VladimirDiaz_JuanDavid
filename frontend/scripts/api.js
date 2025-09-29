@@ -1,7 +1,7 @@
 /* /scripts/api.js */
 (() => {
   const TOKEN_KEY = 'karenflix_token';
-  const API_BASE  = "https://proyecto-ex-press-backend-s1-santoyo-juan-diaz-vladi-5ryvzv5c5.vercel.app/"
+  const API_BASE  = "https://proyecto-ex-press-backend-s1-santoyo-juan-diaz-vladi-cuoyeu98f.vercel.app"
 
   const api = {
     setBase(url)      { localStorage.setItem('API_BASE', url); },
