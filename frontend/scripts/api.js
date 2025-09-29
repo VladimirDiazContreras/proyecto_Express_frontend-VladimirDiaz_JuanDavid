@@ -29,5 +29,7 @@ const api = {
   }
 };
 
-// ← clave: api disponible en global
 window.api = api;
+export { api };
+   // <-- exporta api para poder hacer import { api }
+
