@@ -117,7 +117,7 @@ async function cargarReseñas(peliculaId) {
   };
 
   try {
-    const data = await api.request(`/reviews/${peliculaId}`, { method: "GET" });
+    const data = await api.request(`/reviews/movie/${peliculaId}`, { method: "GET" });
     console.log("📖 Reseñas obtenidas:", data);
 
     const lista = Array.isArray(data) ? data : data?.reseñas;
