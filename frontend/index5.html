@@ -53,6 +53,44 @@
     </section>
   </main>
 
+  <!-- Modal para editar reseña -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Editar Reseña</h3>
+        <span class="close" id="closeModal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="movie-info">
+          <img id="modalMoviePoster" src="" alt="">
+          <h4 id="modalMovieTitle"></h4>
+        </div>
+        <form id="editReviewForm">
+          <div class="form-group">
+            <label for="editCalificacion">Calificación:</label>
+            <div class="rating-input">
+              <select id="editCalificacion" required>
+                <option value="1">⭐ (1)</option>
+                <option value="2">⭐⭐ (2)</option>
+                <option value="3">⭐⭐⭐ (3)</option>
+                <option value="4">⭐⭐⭐⭐ (4)</option>
+                <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="editComentario">Comentario:</label>
+            <textarea id="editComentario" rows="4" placeholder="Escribe tu comentario..." required></textarea>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn-cancel" id="cancelEdit">Cancelar</button>
+            <button type="submit" class="btn-save">Guardar Cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="./scripts/api.js" type="module"></script>
   <script src="./scripts/script5.js" type="module"></script>

@@ -31,14 +31,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     contenedor.innerHTML = "";
     lista.forEach(item => {
       const card = document.createElement("div");
-      card.classList.add("movie-card");
+      card.classList.add("review-card");
+
+      // Generar estrellas para la calificación
+      const estrellas = "⭐".repeat(item.calificacion) + "☆".repeat(5 - item.calificacion);
 
       card.innerHTML = `
-        <img src="${item.pelicula?.portada || './img/no-image.png'}" alt="${item.pelicula?.nombre || "Película"}">
-        <div class="movie-overlay">
-          <h3>${item.pelicula?.nombre || "Sin título"}</h3>
-          <p class="comentario">💬 ${item.comentario}</p>
-          <p class="calificacion">⭐ ${item.calificacion}/5</p>
+        <div class="review-content">
+          <img src="${item.pelicula?.portada || './img/no-image.png'}" alt="${item.pelicula?.nombre || "Película"}" class="movie-poster">
+          <div class="review-info">
+            <h3 class="movie-title">${item.pelicula?.nombre || "Sin título"}</h3>
+            <div class="rating">${estrellas} (${item.calificacion}/5)</div>
+            <p class="comment">"${item.comentario}"</p>
+            <div class="review-date">📅 ${new Date(item.createdAt).toLocaleDateString()}</div>
+          </div>
+        </div>
+        <div class="review-actions">
+          <button class="btn-edit" onclick="editReview('${item._id}', '${item.pelicula?.nombre}', '${item.pelicula?.portada}', '${item.comentario}', ${item.calificacion})">
+            ✏️ Editar
+          </button>
+          <button class="btn-delete" onclick="deleteReview('${item._id}', '${item.pelicula?.nombre}')">
+            🗑️ Eliminar
+          </button>
         </div>
       `;
 
@@ -50,6 +64,42 @@ document.addEventListener("DOMContentLoaded", async () => {
     contenedor.innerHTML = `<p class="error">Error al cargar tu lista: ${error.message}</p>`;
   }
 });
+
+// Variables globales para el modal
+let currentReviewId = null;
+
+// Función para editar reseña
+window.editReview = function(reviewId, movieTitle, moviePoster, comentario, calificacion) {
+  currentReviewId = reviewId;
+  
+  // Llenar el modal con los datos actuales
+  document.getElementById('modalMovieTitle').textContent = movieTitle;
+  document.getElementById('modalMoviePoster').src = moviePoster || './img/no-image.png';
+  document.getElementById('editComentario').value = comentario;
+  document.getElementById('editCalificacion').value = calificacion;
+  
+  // Mostrar el modal
+  document.getElementById('editModal').style.display = 'block';
+};
+
+// Función para eliminar reseña
+window.deleteReview = async function(reviewId, movieTitle) {
+  if (!confirm(`¿Estás seguro de que quieres eliminar tu reseña de "${movieTitle}"?`)) {
+    return;
+  }
+
+  try {
+    await api.request(`/reviews/${reviewId}`, {
+      method: 'DELETE'
+    });
+
+    alert('Reseña eliminada correctamente');
+    location.reload(); // Recargar la página para actualizar la lista
+  } catch (error) {
+    console.error('Error eliminando reseña:', error);
+    alert('Error al eliminar la reseña: ' + error.message);
+  }
+};
 
 // Burger menú y logout
 document.addEventListener("DOMContentLoaded", () => {
@@ -78,4 +128,56 @@ document.addEventListener("DOMContentLoaded", () => {
       location.href = "index.html";
     });
   }
+
+  // Event listeners para el modal
+  const modal = document.getElementById('editModal');
+  const closeModal = document.getElementById('closeModal');
+  const cancelEdit = document.getElementById('cancelEdit');
+  const editForm = document.getElementById('editReviewForm');
+
+  // Cerrar modal
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  cancelEdit.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Cerrar modal al hacer clic fuera
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  // Manejar envío del formulario de edición
+  editForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const comentario = document.getElementById('editComentario').value.trim();
+    const calificacion = parseInt(document.getElementById('editCalificacion').value);
+
+    if (!comentario || !calificacion) {
+      alert('Por favor completa todos los campos');
+      return;
+    }
+
+    try {
+      await api.request(`/reviews/${currentReviewId}`, {
+        method: 'PUT',
+        body: {
+          comentario,
+          calificacion
+        }
+      });
+
+      alert('Reseña actualizada correctamente');
+      modal.style.display = 'none';
+      location.reload(); // Recargar la página para mostrar los cambios
+    } catch (error) {
+      console.error('Error actualizando reseña:', error);
+      alert('Error al actualizar la reseña: ' + error.message);
+    }
+  });
 });
