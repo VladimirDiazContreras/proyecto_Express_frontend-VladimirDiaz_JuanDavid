@@ -1,4 +1,5 @@
 /* /scripts/script3.js */
+import { api } from "./api.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
@@ -170,6 +171,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (burger && sideMenu) {
     burger.addEventListener("click", () => {
       sideMenu.classList.toggle("active");
+    });
+  }
+
+  // Conectar el botón de cerrar sesión
+  const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+  if (btnCerrarSesion) {
+    btnCerrarSesion.addEventListener("click", () => {
+      api.clearToken();
+      location.href = "index.html";
     });
   }
 });

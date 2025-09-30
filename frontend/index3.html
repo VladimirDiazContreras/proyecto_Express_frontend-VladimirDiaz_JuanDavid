@@ -62,19 +62,7 @@
     </div>
   </section>
 
-  <script src="./scripts/api.js"></script>
-  <script src="./scripts/script3.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const burger = document.getElementById("burger");
-      const sideMenu = document.getElementById("sideMenu");
-      if (burger && sideMenu) burger.addEventListener("click", () => sideMenu.classList.toggle("active"));
-
-      document.getElementById("btnCerrarSesion").addEventListener("click", () => {
-        api.clearToken();
-        location.href = "index.html";
-      });
-    });
-  </script>
+  <script src="./scripts/api.js" type="module"></script>
+  <script src="./scripts/script3.js" type="module"></script>
 </body>
 </html>
