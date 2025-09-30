@@ -31,5 +31,4 @@ const api = {
 
 window.api = api;
 export { api };
-   // <-- exporta api para poder hacer import { api }
 

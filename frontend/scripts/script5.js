@@ -1,4 +1,5 @@
 /* /scripts/script5.js */
+import { api } from "./api.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const contenedor = document.getElementById("mi-lista");
@@ -48,4 +49,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("❌ Error cargando Mi Lista:", error);
     contenedor.innerHTML = `<p class="error">Error al cargar tu lista: ${error.message}</p>`;
   }
+});
+
+// Burger menú
+const burger = document.getElementById("burger");
+const sideMenu = document.getElementById("sideMenu");
+
+burger.addEventListener("click", () => {
+  sideMenu.classList.toggle("active");
+});
+
+// Logout
+document.getElementById("logoutBtn").addEventListener("click", () => {
+  api.clearToken();
+  location.href = "index.html";
+});
+
+document.getElementById("logoutBtnMobile").addEventListener("click", () => {
+  api.clearToken();
+  location.href = "index.html";
 });

@@ -54,27 +54,7 @@
   </main>
 
   <!-- Scripts -->
-  <script src="./scripts/api.js"></script>
-  <script src="./scripts/script5.js"></script>
-  <script>
-    // Burger menú
-    const burger = document.getElementById("burger");
-    const sideMenu = document.getElementById("sideMenu");
-
-    burger.addEventListener("click", () => {
-      sideMenu.classList.toggle("active");
-    });
-
-    // Logout
-    document.getElementById("logoutBtn").addEventListener("click", () => {
-      api.clearToken();
-      location.href = "index.html";
-    });
-
-    document.getElementById("logoutBtnMobile").addEventListener("click", () => {
-      api.clearToken();
-      location.href = "index.html";
-    });
-  </script>
+  <script src="./scripts/api.js" type="module"></script>
+  <script src="./scripts/script5.js" type="module"></script>
 </body>
 </html>

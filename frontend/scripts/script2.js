@@ -1,4 +1,6 @@
 /* /scripts/script2.js */
+import { api } from "./api.js";
+
 document.addEventListener('DOMContentLoaded', async () => {
   // Logout
   const logoutBtn = document.getElementById('logoutBtn');
