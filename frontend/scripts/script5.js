@@ -51,21 +51,31 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// Burger menú
-const burger = document.getElementById("burger");
-const sideMenu = document.getElementById("sideMenu");
+// Burger menú y logout
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.getElementById("burger");
+  const sideMenu = document.getElementById("sideMenu");
 
-burger.addEventListener("click", () => {
-  sideMenu.classList.toggle("active");
-});
+  if (burger && sideMenu) {
+    burger.addEventListener("click", () => {
+      sideMenu.classList.toggle("active");
+    });
+  }
 
-// Logout
-document.getElementById("logoutBtn").addEventListener("click", () => {
-  api.clearToken();
-  location.href = "index.html";
-});
+  // Logout
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      api.clearToken();
+      location.href = "index.html";
+    });
+  }
 
-document.getElementById("logoutBtnMobile").addEventListener("click", () => {
-  api.clearToken();
-  location.href = "index.html";
+  const logoutBtnMobile = document.getElementById("logoutBtnMobile");
+  if (logoutBtnMobile) {
+    logoutBtnMobile.addEventListener("click", () => {
+      api.clearToken();
+      location.href = "index.html";
+    });
+  }
 });

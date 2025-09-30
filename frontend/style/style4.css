@@ -77,6 +77,8 @@ body {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  z-index: 1002;
+  position: relative;
 }
 
 .burger span {
@@ -209,11 +211,17 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .desktop-menu {
+  .nav-links {
+    display: none;
+  }
+  .user-options {
     display: none;
   }
   .burger {
     display: flex;
+  }
+  .navbar {
+    padding: 15px 20px;
   }
   .movie-item {
     flex-direction: column;
@@ -222,6 +230,19 @@ body {
   }
   .movie-item img {
     width: 140px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+  .logo {
+    font-size: 24px;
+  }
+  .burger {
+    display: flex;
   }
 }
 

@@ -65,3 +65,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 });
+
+// Burger menú y logout
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.getElementById("burger");
+  const sideMenu = document.getElementById("sideMenu");
+
+  if (burger && sideMenu) {
+    burger.addEventListener("click", () => {
+      sideMenu.classList.toggle("active");
+    });
+  }
+
+  // Logout
+  const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+  if (btnCerrarSesion) {
+    btnCerrarSesion.addEventListener("click", () => {
+      api.clearToken();
+      location.href = "index.html";
+    });
+  }
+});
